@@ -64,9 +64,9 @@ const StickyServices: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 max-w-4xl w-full mx-6 p-8 md:p-12 bg-void-light/40 backdrop-blur-xl border border-mystic-gold/20 rounded-lg shadow-2xl"
+            className="relative z-10 max-w-4xl w-full mx-6 p-8 md:p-12 bg-void/90 border border-mystic-gold/20 rounded-lg shadow-2xl transform-gpu will-change-transform"
           >
             {/* Decorative Elements */}
             <div className="absolute -top-6 -left-6 text-mystic-gold/10 pointer-events-none">
