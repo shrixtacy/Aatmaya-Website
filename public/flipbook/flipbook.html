@@ -126,9 +126,14 @@
         }
     }
 
-    // Run on load and resize
+    let lastWidth = window.innerWidth;
     $(window).on('resize', function() {
-        initializeOrResizeFlipbook();
+        // Mobile browsers hide/show the address bar on scroll, triggering resize events.
+        // We only want to rebuild the flipbook if the *width* changes significantly (e.g., orientation swap).
+        if (Math.abs(window.innerWidth - lastWidth) > 30) {
+            lastWidth = window.innerWidth;
+            initializeOrResizeFlipbook();
+        }
     });
     
     // Initialize
