@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import IntroDoubleSlide from './components/IntroDoubleSlide';
@@ -9,37 +10,33 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StarBackground from './components/StarBackground';
+import JournalPage from './components/JournalPage';
+
+const HomePage: React.FC = () => (
+  <>
+    <Navbar />
+    <Hero />
+    <IntroDoubleSlide />
+    <StickyServices />
+    <MonthlyFlipbook />
+    <AstralCalendar />
+    <Testimonials />
+    <Contact />
+    <Footer />
+  </>
+);
 
 const App: React.FC = () => {
   return (
-    <main className="relative bg-void min-h-screen text-antique-white selection:bg-mystic-gold selection:text-void scroll-smooth">
-      <Navbar />
-      <StarBackground />
-
-      {/* 1. Hero */}
-      <Hero />
-
-      {/* 2. IntroDoubleSlide */}
-      <IntroDoubleSlide />
-
-      {/* 3. StickyServices (Untouched) */}
-      <StickyServices />
-
-      {/* 4. MonthlyFlipbook */}
-      <MonthlyFlipbook />
-
-      {/* 5. AstralCalendar */}
-      <AstralCalendar />
-
-      {/* 6. Testimonials */}
-      <Testimonials />
-
-      {/* 7. Contact */}
-      <Contact />
-
-      {/* 8. Footer */}
-      <Footer />
-    </main>
+    <Router>
+      <main className="relative bg-void min-h-screen text-antique-white selection:bg-mystic-gold selection:text-void scroll-smooth">
+        <StarBackground />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/journal" element={<JournalPage />} />
+        </Routes>
+      </main>
+    </Router>
   );
 };
 
