@@ -55,7 +55,7 @@ const ZodiacSection: React.FC = () => {
                     </div>
                     <div className="relative aspect-square md:aspect-video overflow-hidden rounded-xl border border-mystic-gold/20">
                         <img
-                            src="https://images.unsplash.com/photo-1515266591878-5a451906f404?q=80&w=2940&auto=format&fit=crop"
+                            src="/Astrology.webp"
                             alt="Zodiac Constellations"
                             className="w-full h-full object-cover opacity-60 grayscale"
                         />

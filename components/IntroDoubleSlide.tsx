@@ -97,13 +97,10 @@ const IntroDoubleSlide: React.FC = () => {
                                         <div className="w-16 h-[1px] bg-mystic-gold mx-auto md:mx-0 mb-6 md:mb-8"></div>
                                         <div className="space-y-4 text-parchment/70 font-body text-base md:text-lg leading-relaxed">
                                             <p>
-                                                If you are here looking for answers, I want you to know: I understand exactly how you feel. My path began with Tarot, which opened the door to self-discovery.
+                                                Welcome to a Space of Clarity and Cosmic Insight. If you are feeling uncertain, curious, or simply seeking a deeper connection with your life path, know that the universe has a message for you. Let’s uncover it together.
                                             </p>
                                             <p>
-                                                Hungry for deeper truths, I expanded my studies into Vedic Astrology and Palmistry, gaining formal wisdom under the guidance of Gurudev Shrie Kashyap.
-                                            </p>
-                                            <p className="hidden md:block">
-                                                Today, that passion has evolved into my profession. Having served over 100+ clients, I now use the knowledge that changed my life to help you change yours.
+                                                Your birth chart is your blueprint, and your palms are your timeline. Through a unique blend of Vedic Astrology, Palmistry, and Tarot, we turn the unknown into actionable insight.
                                             </p>
                                         </div>
                                     </div>
@@ -120,8 +117,8 @@ const IntroDoubleSlide: React.FC = () => {
                                             <div className="absolute inset-0 border border-parchment/10 rotate-3 -translate-x-2 -translate-y-2 transition-transform duration-700 group-hover:rotate-1"></div>
                                             <div className="absolute inset-0 overflow-hidden">
                                                 <img
-                                                    src="https://images.unsplash.com/photo-1518131395894-436323c92c89?q=80&w=1200&auto=format&fit=crop"
-                                                    alt="Digital Craft"
+                                                    src="/AboutSpace2.jpeg"
+                                                    alt="Aatmaya Mystic Arts"
                                                     className="w-full h-full object-cover grayscale contrast-125 sepia-[.2] opacity-90"
                                                 />
                                             </div>
@@ -130,18 +127,18 @@ const IntroDoubleSlide: React.FC = () => {
 
                                     {/* Text Side - Second on mobile */}
                                     <div className="order-2 md:order-1 text-center md:text-right">
-                                        <h4 className="font-heading text-mystic-gold-dim text-sm tracking-[0.3em] mb-4 uppercase">The Craft</h4>
+                                        <h4 className="font-heading text-mystic-gold-dim text-sm tracking-[0.3em] mb-4 uppercase">The Vision</h4>
                                         <h2 className="font-heading text-3xl md:text-5xl text-antique-white mb-6 md:mb-8 leading-tight">
-                                            Weaving Digital <br className="md:hidden" />
-                                            <span className="text-mystic-gold">Sanctuaries</span>
+                                            Empowering Your <br className="md:hidden" />
+                                            <span className="text-mystic-gold">Journey</span>
                                         </h2>
                                         <div className="w-16 h-[1px] bg-mystic-gold mx-auto md:ml-auto md:mr-0 mb-6 md:mb-8"></div>
                                         <div className="space-y-4 text-parchment/70 font-body text-base md:text-lg leading-relaxed">
                                             <p>
-                                                I craft immersive web experiences that serve as portals to clarity. Every pixel is placed with intention, every animation a breath of life.
+                                                Aatmaya is a sanctuary for the mystic arts with a reputation for accuracy and empathy. Mastering the trifecta of Vedic Astrology, Palmistry, and Tarot, we look past the surface to reveal the core of your challenges.
                                             </p>
                                             <p>
-                                                Where ancient symbols meet modern technology, creating spaces for reflection, growth, and divine connection.
+                                                At Aatmaya, we provide honest, direct, and transformative guidance to help you take control of your destiny today.
                                             </p>
                                         </div>
                                     </div>

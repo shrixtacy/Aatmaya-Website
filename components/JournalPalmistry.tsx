@@ -15,7 +15,7 @@ const PalmistrySection: React.FC = () => {
                     <div className="absolute inset-0 bg-mystic-gold/5 rounded-full scale-75 group-hover:scale-100 transition-transform duration-1000"></div>
                     <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-mystic-gold/20 shadow-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1543160732-2d159a24f810?q=80&w=1200&auto=format&fit=crop"
+                            src="/AATMAYA Background.webp"
                             alt="Ancient Hand Reading"
                             className="w-full h-full object-cover grayscale contrast-125 opacity-80"
                         />

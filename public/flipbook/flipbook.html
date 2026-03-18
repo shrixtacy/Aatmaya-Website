@@ -66,7 +66,73 @@
   <script src="jquery.js"></script>
   <script src="turn.js"></script>
   <script>
-    $(".flipbook").turn();
+    function initializeOrResizeFlipbook() {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const isMobile = vw < 600;
+        
+        let fbWidth, fbHeight;
+        
+        // Single page mode is roughly 5:6 aspect ratio
+        if (isMobile) {
+            let maxWidth = vw - 20; // 10px padding sides
+            let maxHeight = vh - 20; // 10px padding top/bottom
+            
+            // Limit max dimensions on mobile
+            if (maxWidth > 400) maxWidth = 400;
+            
+            if (maxWidth / maxHeight > 5 / 6) {
+                fbHeight = maxHeight;
+                fbWidth = maxHeight * (5 / 6);
+            } else {
+                fbWidth = maxWidth;
+                fbHeight = maxWidth * (6 / 5);
+            }
+        } else {
+            // Double page mode is roughly 10:6 aspect ratio
+            let maxWidth = vw - 40;
+            let maxHeight = vh - 40;
+            
+            // Don't upscale past original assets
+            if (maxWidth > 1000) maxWidth = 1000;
+            if (maxHeight > 600) maxHeight = 600;
+            
+            if (maxWidth / maxHeight > 10 / 6) {
+                fbHeight = maxHeight;
+                fbWidth = maxHeight * (10 / 6);
+            } else {
+                fbWidth = maxWidth;
+                fbHeight = maxWidth * (6 / 10);
+            }
+        }
+
+        // Apply sizing
+        const flipbook = $('.flipbook');
+        
+        if (flipbook.turn('is')) {
+            // If already initialized, update size
+            flipbook.turn('size', fbWidth, fbHeight);
+            flipbook.turn('display', isMobile ? 'single' : 'double');
+        } else {
+            // First time initialization
+            flipbook.turn({
+                width: fbWidth,
+                height: fbHeight,
+                autoCenter: true,
+                display: isMobile ? 'single' : 'double',
+                gradients: true,
+                elevation: 50
+            });
+        }
+    }
+
+    // Run on load and resize
+    $(window).on('resize', function() {
+        initializeOrResizeFlipbook();
+    });
+    
+    // Initialize
+    initializeOrResizeFlipbook();
     
     // Auto-play functionality
     let autoPlayInterval;
@@ -83,7 +149,6 @@
         if (currentPage < totalPages) {
           flipbook.turn('next');
         } else {
-          // Reset to first page when reaching the end
           flipbook.turn('page', 1);
         }
       }, 3000); // Change page every 3 seconds
@@ -95,7 +160,6 @@
       clearInterval(autoPlayInterval);
     }
     
-    // Toggle auto-play when switch is clicked
     $("#autoPlayToggle").on('change', function() {
       if (this.checked) {
         startAutoPlay();
@@ -104,7 +168,15 @@
       }
     });
     
-    // Stop auto-play when user manually turns pages
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'openFlipbook') {
+            const flipbook = $(".flipbook");
+            if (flipbook.turn('page') === 1) {
+                flipbook.turn('next');
+            }
+        }
+    });
+    
     $(".flipbook").on('turning', function() {
       if (isAutoPlaying) {
         stopAutoPlay();
