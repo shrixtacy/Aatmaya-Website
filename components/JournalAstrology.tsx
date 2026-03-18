@@ -15,7 +15,7 @@ const AstrologySection: React.FC = () => {
                     <div className="absolute inset-0 bg-mystic-gold/5 rounded-full scale-75 group-hover:scale-100 transition-transform duration-1000"></div>
                     <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-mystic-gold/20 shadow-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1532667449560-72a95c89bb2f?q=80&w=1200&auto=format&fit=crop"
+                            src="/Astrology.webp"
                             alt="Vedic Astrology Chart"
                             className="w-full h-full object-cover grayscale contrast-125 opacity-80"
                         />

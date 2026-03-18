@@ -86,7 +86,7 @@ const TarotSection: React.FC = () => {
                             <div className="grid sm:grid-cols-2 gap-8">
                                 <div className="aspect-[2/3] group relative overflow-hidden rounded-xl border border-mystic-gold/20">
                                     <img
-                                        src="https://images.unsplash.com/photo-1590502128822-26cb6860d5b6?q=80&w=800&auto=format&fit=crop"
+                                        src="/Tarot.webp"
                                         alt="Tarot Scene"
                                         className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-1000"
                                     />

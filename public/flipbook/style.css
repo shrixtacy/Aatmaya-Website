@@ -8,17 +8,17 @@
 }
 
 body {
-    display: grid;
-    place-content: center;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100vw;
 	overflow: hidden;
 	background: transparent;
 }
 
 .flipbook {
-    width: 1000px;
-    height: 600px;
+    margin: 0 auto;
 }
 
 .flipbook .hard {
