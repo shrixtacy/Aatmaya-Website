@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram, Mail, Facebook, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -28,9 +29,9 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="font-heading text-sm text-mystic-gold tracking-widest uppercase mb-6">Explore</h4>
               <ul className="space-y-4 font-body text-parchment/80">
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer">Readings</li>
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer">The Journal</li>
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer">About The Oracle</li>
+                <li><Link to="/services" className="hover:text-mystic-gold transition-colors cursor-pointer block">Readings</Link></li>
+                <li><Link to="/journal" className="hover:text-mystic-gold transition-colors cursor-pointer block">The Journal</Link></li>
+                <li><Link to="/about" className="hover:text-mystic-gold transition-colors cursor-pointer block">About Aatmaya</Link></li>
               </ul>
             </div>
             <div>
