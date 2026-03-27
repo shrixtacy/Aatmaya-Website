@@ -20,25 +20,14 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-5xl flex flex-col items-center gap-10">
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="flex items-center gap-4"
-        >
-          <div className="h-[1px] w-12 bg-mystic-gold/60"></div>
-          <span className="font-heading text-sm tracking-[0.3em] text-mystic-gold uppercase">Est. 2024</span>
-          <div className="h-[1px] w-12 bg-mystic-gold/60"></div>
-        </motion.div>
-
-        <h1 className="font-heading text-5xl md:text-8xl lg:text-9xl tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-antique-white to-parchment-dark drop-shadow-2xl">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-antique-white to-parchment-dark drop-shadow-2xl">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="block"
           >
-            Beyond The
+            Welcome to a Space of
           </motion.span>
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
@@ -46,7 +35,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 1, delay: 1.2 }}
             className="block text-mystic-gold italic font-serif mt-2"
           >
-            Veil
+            Clarity and Cosmic Insight
           </motion.span>
         </h1>
 
@@ -54,11 +43,9 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="font-body text-xl md:text-2xl text-parchment/80 tracking-wide max-w-2xl leading-relaxed"
+          className="font-body text-lg md:text-xl text-parchment/80 tracking-wide max-w-3xl leading-relaxed mx-auto"
         >
-          Unlock the wisdom written in the stars.
-          <br className="hidden md:block" />
-          Ancient divination for the modern soul.
+          If you are feeling uncertain, curious, or simply seeking a deeper connection with your life path, know that the universe has a message for you. Let’s uncover it together.
         </motion.p>
 
         <motion.div
@@ -67,12 +54,12 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 2 }}
           className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-8 mb-20 md:mb-0"
         >
-          <button className="group relative px-6 md:px-8 py-3 md:py-4 bg-mystic-gold/10 border border-mystic-gold/40 text-mystic-gold font-heading tracking-[0.2em] uppercase text-xs md:text-sm overflow-hidden hover:text-void transition-colors duration-500">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group relative px-6 md:px-8 py-3 md:py-4 bg-mystic-gold/10 border border-mystic-gold/40 text-mystic-gold font-heading tracking-[0.2em] uppercase text-xs md:text-sm overflow-hidden hover:text-void transition-colors duration-500 outline-none inline-block">
             <div className="absolute inset-0 w-full h-full bg-mystic-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               <Star className="w-4 h-4" /> Book a Reading
             </span>
-          </button>
+          </a>
 
           <button className="group px-6 md:px-8 py-3 md:py-4 text-parchment font-heading tracking-[0.2em] uppercase text-xs md:text-sm hover:text-mystic-gold transition-colors duration-300 border-b border-transparent hover:border-mystic-gold/50">
             Explore Services

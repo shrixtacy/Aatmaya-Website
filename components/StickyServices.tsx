@@ -1,110 +1,113 @@
 import React from 'react';
-import { Sparkles, Moon, Flame, Sun, Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Service } from '../types';
+import { ArrowRight, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const services: Service[] = [
+const services = [
+  {
+    id: 'vedic-astrology',
+    title: 'Vedic Astrology',
+    description: 'Understand the blueprint of your soul. By mapping the stars at the exact moment of your birth, we reveal your core strengths, karmic lessons, and destiny.',
+    imageUrl: '/Astrology.webp',
+  },
   {
     id: 'tarot',
     title: 'Tarot Reading',
     description: 'A deep dive into your past, present, and future using the ancient symbolism of the Tarot. We will explore the archetypes influencing your journey and uncover hidden blocks.',
-    icon: <Sparkles className="w-8 h-8" />,
-    imageUrl: '/Tarot.jpg',
+    imageUrl: '/Tarot.webp',
   },
   {
-    id: 'birth-chart',
-    title: 'Birth Chart & Astrology',
-    description: 'Understand the blueprint of your soul. By mapping the stars at the exact moment of your birth, we reveal your core strengths, karmic lessons, and destiny.',
-    icon: <Moon className="w-8 h-8" />,
-    imageUrl: '/Astrology.webp',
+    id: 'palmistry',
+    title: 'Palmistry',
+    description: 'Decode the map hidden in your hands. A comprehensive analysis of your lifelines to understand your dominant traits, career path, love life, and physical vitality.',
+    imageUrl: '/AboutSpace2.jpeg',
   },
   {
-    id: 'ritual',
-    title: 'Full Moon Ritual Guidance',
-    description: 'Harness the potent energy of the full moon. I will design a personalized ritual for you to release what no longer serves you and manifest your deepest desires.',
-    icon: <Eye className="w-8 h-8" />,
-    imageUrl: '/Moon.webp',
-  },
-  {
-    id: 'fire-sign',
-    title: 'Fire Sign Predictions',
-    description: 'Specialized readings for Aries, Leo, and Sagittarius. Ignite your passion and channel your fiery energy into productive, transformative action.',
-    icon: <Flame className="w-8 h-8" />,
-    imageUrl: '/fire sign.webp',
-  },
-  {
-    id: 'energy',
-    title: 'Personal Energy Forecast',
-    description: 'A holistic scan of your auric field and chakra alignment. Discover where your energy is leaking and how to reclaim your vital life force.',
-    icon: <Sun className="w-8 h-8" />,
-    imageUrl: '/energy forcast.webp',
+    id: 'reiki',
+    title: 'Reiki Energy Healing',
+    description: 'A holistic scan and realignment of your auric field and chakras. Discover where your energy is leaking and gently restore your vital life force to find inner peace.',
+    imageUrl: '/energy forcast.webp', 
   },
 ];
 
 const StickyServices: React.FC = () => {
   return (
-    <section className="relative bg-void">
-      {services.map((service, index) => (
-        <div
-          key={service.id}
-          className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden"
-          style={{ zIndex: index + 1 }}
-        >
-          {/* Background Image with Parallax-like feel */}
-          <div className="absolute inset-0">
-            <img
-              src={service.imageUrl}
-              alt={service.title}
-              className="w-full h-full object-cover grayscale opacity-40 scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-void via-void/80 to-black opacity-90"></div>
-          </div>
+    <section className="relative bg-void w-full" id="services">
+      {/* Services Band */}
+      <div className="w-full bg-void-light/50 border-t border-b border-mystic-gold/20 py-8 px-6 md:px-12 relative z-20 flex flex-col md:flex-row items-center justify-between">
+        <h2 className="font-heading text-3xl md:text-3xl text-mystic-gold uppercase tracking-[0.3em] mb-4 md:mb-0">
+          Services
+        </h2>
+        <Link to="/services" className="group flex items-center gap-2 text-parchment hover:text-mystic-gold transition-colors font-heading text-sm uppercase tracking-widest">
+          View All Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
 
-          {/* Content Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10 max-w-4xl w-full mx-6 p-8 md:p-12 bg-void/90 border border-mystic-gold/20 rounded-lg shadow-2xl transform-gpu will-change-transform"
+      {/* Scroll Stack */}
+      <div className="relative">
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            className="sticky top-0 min-h-screen w-full flex items-center justify-center overflow-hidden py-6 px-3 md:px-12"
+            style={{ zIndex: index + 1 }}
           >
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -left-6 text-mystic-gold/10 pointer-events-none">
-              <span className="font-heading text-9xl">{index + 1}</span>
+            {/* Solid background for each layer so they stack opaquely */}
+            <div className="absolute inset-0 bg-void border-t border-mystic-gold/10">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-void via-void/90 to-black opacity-80"></div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
-              {/* Icon Box */}
-              <div className="shrink-0 w-20 h-20 rounded-full border border-mystic-gold/40 flex items-center justify-center bg-gradient-to-br from-mystic-gold/20 to-transparent shadow-[0_0_30px_rgba(212,175,55,0.1)]">
-                <div className="text-mystic-gold animate-pulse-slow">
-                  {service.icon}
-                </div>
+            {/* Content Card (Horizontal Layout) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative z-10 w-full max-w-5xl mx-auto bg-void/80 backdrop-blur-md border border-mystic-gold/20 flex flex-col md:flex-row overflow-hidden rounded-sm shadow-2xl"
+            >
+              {/* Image Left */}
+              <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:h-[420px] relative overflow-hidden group">
+                <div className="absolute inset-0 bg-mystic-gold/10 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
+                <img
+                  src={service.imageUrl}
+                  alt={service.title}
+                  className="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-1000 ease-out"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2994&auto=format&fit=crop';
+                  }}
+                />
               </div>
 
-              <div className="text-center md:text-left">
-                <h3 className="font-heading text-3xl md:text-4xl text-antique-white mb-6 tracking-wide">
+              {/* Text Right */}
+              <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col justify-center relative">
+                <div className="absolute top-2 right-6 text-mystic-gold/5 pointer-events-none">
+                  <span className="font-heading text-6xl md:text-8xl font-bold">0{index + 1}</span>
+                </div>
+                
+                <h3 className="font-heading text-2xl md:text-4xl text-antique-white mb-3 md:mb-4 tracking-wider relative z-10">
                   {service.title}
                 </h3>
-                <p className="font-body text-xl text-parchment/80 leading-relaxed mb-8 max-w-2xl">
+                
+                <p className="font-body text-sm md:text-lg text-parchment/70 leading-relaxed mb-6 md:mb-8 relative z-10">
                   {service.description}
                 </p>
 
-                <button className="group inline-flex items-center gap-3 px-8 py-3 bg-mystic-gold/10 hover:bg-mystic-gold/20 border border-mystic-gold/40 text-mystic-gold uppercase tracking-[0.2em] text-sm transition-all duration-300">
-                  <span>Discover</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <div className="flex flex-row gap-3 relative z-10">
+                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-mystic-gold/10 hover:bg-mystic-gold/20 border border-mystic-gold/40 text-mystic-gold uppercase tracking-[0.1em] text-[10px] md:text-xs transition-all duration-300 whitespace-nowrap">
+                    <Calendar className="w-4 h-4" />
+                    <span>Book Appointment</span>
+                  </a>
+                  
+                  <Link to="/services" className="group flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 text-parchment hover:text-mystic-gold uppercase tracking-[0.1em] text-[10px] md:text-xs transition-all duration-300 border border-mystic-gold/10 hover:border-mystic-gold/30 whitespace-nowrap">
+                    <span>View Details</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Scroll Indicator (Only for first few slides) */}
-          {index < services.length - 1 && (
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-mystic-gold/30 animate-bounce">
-              <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-mystic-gold/50"></div>
-            </div>
-          )}
-        </div>
-      ))}
+            </motion.div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

@@ -4,13 +4,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import IntroDoubleSlide from './components/IntroDoubleSlide';
 import StickyServices from './components/StickyServices';
-import MonthlyFlipbook from './components/MonthlyFlipbook';
+import ZodiacCardCarousel from './components/ZodiacCardCarousel';
 import AstralCalendar from './components/AstralCalendar';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StarBackground from './components/StarBackground';
 import JournalPage from './components/JournalPage';
+import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
 
 const HomePage: React.FC = () => (
   <>
@@ -18,7 +20,7 @@ const HomePage: React.FC = () => (
     <Hero />
     <IntroDoubleSlide />
     <StickyServices />
-    <MonthlyFlipbook />
+    <ZodiacCardCarousel />
     <AstralCalendar />
     <Testimonials />
     <Contact />
@@ -33,6 +35,8 @@ const App: React.FC = () => {
         <StarBackground />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/journal" element={<JournalPage />} />
         </Routes>
       </main>

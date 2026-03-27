@@ -23,9 +23,8 @@ const IntroDoubleSlide: React.FC = () => {
                 viewport={{ once: true }}
                 className="mb-12 md:mb-16 text-center"
             >
-                <h4 className="font-heading text-mystic-gold text-xs tracking-[0.4em] uppercase mb-4 opacity-70">Sanctuary</h4>
                 <h2 className="font-heading text-3xl md:text-5xl text-antique-white tracking-widest uppercase">
-                    About The <span className="text-mystic-gold italic font-serif lowercase">Space</span>
+                    About The <span className="text-mystic-gold italic font-serif lowercase">Reader</span>
                 </h2>
                 <div className="w-24 h-[1px] bg-mystic-gold/30 mx-auto mt-6"></div>
             </motion.div>
@@ -97,10 +96,13 @@ const IntroDoubleSlide: React.FC = () => {
                                         <div className="w-16 h-[1px] bg-mystic-gold mx-auto md:mx-0 mb-6 md:mb-8"></div>
                                         <div className="space-y-4 text-parchment/70 font-body text-base md:text-lg leading-relaxed">
                                             <p>
-                                                Welcome to a Space of Clarity and Cosmic Insight. If you are feeling uncertain, curious, or simply seeking a deeper connection with your life path, know that the universe has a message for you. Let’s uncover it together.
+                                                If you are here looking for answers, I want you to know: I understand exactly how you feel. Not long ago, I stood in the same chaotic place—full of questions, searching for my true identity, and unsure of which way to turn. That confusion became the catalyst for my own journey into the mystic arts.
                                             </p>
                                             <p>
-                                                Your birth chart is your blueprint, and your palms are your timeline. Through a unique blend of Vedic Astrology, Palmistry, and Tarot, we turn the unknown into actionable insight.
+                                                My path began with Tarot, which opened the door to self-discovery. Hungry for deeper truths, I expanded my studies into Vedic Astrology and Palmistry, gaining formal wisdom under the guidance of Gurudev Shrie Kashyap. What started as a personal quest to heal my own life soon transformed into a calling to help family and friends.
+                                            </p>
+                                            <p>
+                                                Today, that passion has evolved into my profession. Having served over 100+ clients, I now use the knowledge that changed my life to help you change yours. At Aatmaya, I am not just reading your chart; I am helping you find the clarity I once sought—and found.
                                             </p>
                                         </div>
                                     </div>
@@ -135,10 +137,16 @@ const IntroDoubleSlide: React.FC = () => {
                                         <div className="w-16 h-[1px] bg-mystic-gold mx-auto md:ml-auto md:mr-0 mb-6 md:mb-8"></div>
                                         <div className="space-y-4 text-parchment/70 font-body text-base md:text-lg leading-relaxed">
                                             <p>
+                                                Your birth chart is your blueprint, and your palms are your timeline. Through a unique blend of Vedic Astrology, Palmistry, and Tarot, we turn the unknown into actionable insight.
+                                            </p>
+                                            <p>
                                                 Aatmaya is a sanctuary for the mystic arts with a reputation for accuracy and empathy. Mastering the trifecta of Vedic Astrology, Palmistry, and Tarot, we look past the surface to reveal the core of your challenges.
                                             </p>
                                             <p>
                                                 At Aatmaya, we provide honest, direct, and transformative guidance to help you take control of your destiny today.
+                                            </p>
+                                            <p>
+                                                Your journey doesn't end here, and neither does the guidance. The universe has more to reveal—visit us again whenever you are ready to listen. Thank you.
                                             </p>
                                         </div>
                                     </div>
