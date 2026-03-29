@@ -254,7 +254,7 @@ const ServicesPage: React.FC = () => {
             {/* Hero Section */}
             <header className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2994&auto=format&fit=crop')] bg-cover bg-center opacity-30 grayscale transform-gpu"></div>
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2994&auto=format&fit=crop')] bg-cover bg-center opacity-30 transform-gpu"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void"></div>
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
                 </div>
@@ -348,7 +348,7 @@ const ServicesPage: React.FC = () => {
                                     {/* Book Button */}
                                     <div className="relative z-10 mt-6">
                                         <a
-                                            href="https://wa.me/1234567890"
+                                            href={`https://wa.me/918117005888?text=${encodeURIComponent(`Hi Aatmaya, I'm interested in booking a ${sub.title} reading and would like more information.`)}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 text-mystic-gold/70 hover:text-mystic-gold text-xs uppercase tracking-widest transition-colors font-heading"

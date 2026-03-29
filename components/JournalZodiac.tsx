@@ -57,7 +57,7 @@ const ZodiacSection: React.FC = () => {
                         <img
                             src="/Astrology.webp"
                             alt="Zodiac Constellations"
-                            className="w-full h-full object-cover opacity-60 grayscale"
+                            className="w-full h-full object-cover opacity-60"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent"></div>
                     </div>

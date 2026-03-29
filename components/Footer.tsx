@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Mail, Facebook, ArrowUp } from 'lucide-react';
+import { Mail, Phone, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -12,14 +12,17 @@ const Footer: React.FC = () => {
 
       {/* Massive Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03]">
-        <h1 className="font-heading text-[15vw] text-mystic-gold tracking-widest uppercase">Aatmaya</h1>
+        <h1 className="font-brand text-[15vw] text-mystic-gold tracking-wider">Aatmaya</h1>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
 
           <div className="max-w-sm">
-            <h2 className="font-heading text-3xl text-antique-white mb-6">Aatmaya</h2>
+            <div className="flex items-center gap-4 mb-6">
+              <img src="/logo.png" alt="Aatmaya Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+              <h2 className="font-brand text-4xl mt-2 text-antique-white tracking-wide">Aatmaya</h2>
+            </div>
             <p className="font-body text-xl text-parchment/60 leading-relaxed">
               Illuminating the path within through the language of the stars.
             </p>
@@ -31,22 +34,29 @@ const Footer: React.FC = () => {
               <ul className="space-y-4 font-body text-parchment/80">
                 <li><Link to="/services" className="hover:text-mystic-gold transition-colors cursor-pointer block">Readings</Link></li>
                 <li><Link to="/journal" className="hover:text-mystic-gold transition-colors cursor-pointer block">The Journal</Link></li>
-                <li><Link to="/about" className="hover:text-mystic-gold transition-colors cursor-pointer block">About Aatmaya</Link></li>
+                <li><Link to="/about" className="hover:text-mystic-gold transition-colors cursor-pointer block">About <span className="font-brand text-lg tracking-wide lowercase capitalize">Aatmaya</span></Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-heading text-sm text-mystic-gold tracking-widest uppercase mb-6">Connect</h4>
               <ul className="space-y-4 font-body text-parchment/80">
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</li>
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</li>
-                <li className="hover:text-mystic-gold transition-colors cursor-pointer flex items-center gap-2"><Mail className="w-4 h-4" /> Email</li>
+                <li>
+                  <a href="mailto:aatmaya30@gmail.com" className="hover:text-mystic-gold transition-colors flex items-center gap-2">
+                    <Mail className="w-4 h-4" /> aatmaya30@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/918117005888" target="_blank" rel="noopener noreferrer" className="hover:text-mystic-gold transition-colors flex items-center gap-2">
+                    <Phone className="w-4 h-4" /> +91 8117005888
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-mystic-gold/10">
-          <p className="text-xs text-parchment/40 uppercase tracking-widest">© 2024 Aatmaya. All Rights Reserved.</p>
+          <p className="text-xs text-parchment/40 uppercase tracking-widest">© 2024 <span className="font-brand normal-case tracking-normal text-sm">Aatmaya</span>. All Rights Reserved.</p>
 
           <button
             onClick={scrollToTop}

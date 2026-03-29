@@ -25,7 +25,7 @@ const AboutPage: React.FC = () => {
             {/* Hero Section */}
             <header className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518066596162-811cff7f16fb?q=80&w=2938&auto=format&fit=crop')] bg-cover bg-center opacity-30 grayscale transform-gpu"></div>
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518066596162-811cff7f16fb?q=80&w=2938&auto=format&fit=crop')] bg-cover bg-center opacity-30 transform-gpu"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void"></div>
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
                 </div>
@@ -46,13 +46,21 @@ const AboutPage: React.FC = () => {
                             <Sparkles className="w-5 h-5" />
                         </motion.div>
 
+                        <motion.img
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                            src="/logo.png"
+                            alt="Aatmaya Brand Logo"
+                            className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain mb-8 mix-blend-screen opacity-90"
+                        />
                         <motion.h1
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
                             className="font-heading text-6xl md:text-8xl text-antique-white leading-tight"
                         >
-                            About <span className="italic font-serif text-mystic-gold">Aatmaya</span>
+                            About <span className="font-brand font-medium tracking-normal text-mystic-gold pb-4">Aatmaya</span>
                         </motion.h1>
                     </motion.div>
                 </div>
@@ -61,7 +69,7 @@ const AboutPage: React.FC = () => {
             {/* Main Content */}
             <main className="max-w-4xl mx-auto px-6 pb-32 space-y-24 mt-12">
                 
-                {/* About Aatmya Section */}
+                {/* About Aatmaya Section */}
                 <motion.section 
                     initial="hidden"
                     whileInView="visible"
@@ -73,15 +81,15 @@ const AboutPage: React.FC = () => {
                     <h2 className="font-heading text-3xl md:text-4xl text-mystic-gold mb-8 tracking-wide">Where the Soul Finds Clarity</h2>
                     <div className="space-y-6 text-parchment/80 font-body text-lg leading-relaxed">
                         <p>
-                            Aatmya is a realm of spiritual awakening, where intuition meets divine wisdom. It is a space for those seeking deeper understanding, clarity, and a connection beyond the physical world. Guided by higher energies, Aatmya helps unveil hidden truths, offering insight into life’s mysteries.
+                            <span className="font-brand text-xl tracking-wide">Aatmaya</span> is a realm of spiritual awakening, where intuition meets divine wisdom. It is a space for those seeking deeper understanding, clarity, and a connection beyond the physical world. Guided by higher energies, <span className="font-brand text-xl tracking-wide">Aatmaya</span> helps unveil hidden truths, offering insight into life’s mysteries.
                         </p>
                         <p>
-                            Whether you are searching for purpose, guidance, or a bridge to the unseen, Aatmya opens the door to profound transformation. Here, every message holds meaning, and every journey leads to enlightenment. Step beyond the ordinary—embrace the infinite possibilities that await.
+                            Whether you are searching for purpose, guidance, or a bridge to the unseen, <span className="font-brand text-xl tracking-wide">Aatmaya</span> opens the door to profound transformation. Here, every message holds meaning, and every journey leads to enlightenment. Step beyond the ordinary—embrace the infinite possibilities that await.
                         </p>
                     </div>
                 </motion.section>
 
-                {/* What Aatmya Offers Section */}
+                {/* What Aatmaya Offers Section */}
                 <motion.section 
                     initial="hidden"
                     whileInView="visible"
@@ -90,19 +98,19 @@ const AboutPage: React.FC = () => {
                     className="relative"
                 >
                     <div className="absolute -left-4 md:-left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-mystic-gold/50 via-mystic-gold/10 to-transparent hidden md:block" />
-                    <h2 className="font-heading text-3xl md:text-4xl text-mystic-gold mb-8 tracking-wide">What Aatmya Offers…</h2>
+                    <h2 className="font-heading text-3xl md:text-4xl text-mystic-gold mb-8 tracking-wide">What <span className="font-brand font-medium tracking-wide">Aatmaya</span> Offers…</h2>
                     <div className="space-y-6 text-parchment/80 font-body text-lg leading-relaxed">
                         <p>
-                            Aatmya is more than just a space for spiritual guidance—it is a realm of awakening, transformation, and deep connection. Rooted in the wisdom of the unseen, Aatmya bridges the physical and spiritual worlds, helping seekers uncover hidden truths and find clarity. Whether searching for purpose, healing, or divine guidance, Aatmya offers a path to profound understanding.
+                            <span className="font-brand text-xl tracking-wide">Aatmaya</span> is more than just a space for spiritual guidance—it is a realm of awakening, transformation, and deep connection. Rooted in the wisdom of the unseen, <span className="font-brand text-xl tracking-wide">Aatmaya</span> bridges the physical and spiritual worlds, helping seekers uncover hidden truths and find clarity. Whether searching for purpose, healing, or divine guidance, <span className="font-brand text-xl tracking-wide">Aatmaya</span> offers a path to profound understanding.
                         </p>
                         <p>
-                            Through tarot, intuitive channeling, and spiritual mentoring, Aatmya provides insight into life’s pressing questions—be it love, career, personal growth, or the unknown. Every reading is a sacred experience, infused with divine wisdom, offering not just answers but the guidance to shape your own destiny.
+                            Through tarot, intuitive channeling, and spiritual mentoring, <span className="font-brand text-xl tracking-wide">Aatmaya</span> provides insight into life’s pressing questions—be it love, career, personal growth, or the unknown. Every reading is a sacred experience, infused with divine wisdom, offering not just answers but the guidance to shape your own destiny.
                         </p>
                         <p>
-                            Aatmya recognizes that the future is not set in stone—your free will and choices define your path. Tarot serves as a spiritual compass, unveiling the energies at play and allowing you to navigate life’s crossroads with awareness and confidence.
+                            <span className="font-brand text-xl tracking-wide">Aatmaya</span> recognizes that the future is not set in stone—your free will and choices define your path. Tarot serves as a spiritual compass, unveiling the energies at play and allowing you to navigate life’s crossroads with awareness and confidence.
                         </p>
                         <p>
-                            Here, spiritual energy flows freely, unlocking deeper truths and transformation. Every reading is conducted with care, authenticity, and a deep connection to the higher realms. Whether you seek clarity on a question or a holistic understanding of your life’s purpose, Aatmya is here to illuminate the unseen and empower your spirit.
+                            Here, spiritual energy flows freely, unlocking deeper truths and transformation. Every reading is conducted with care, authenticity, and a deep connection to the higher realms. Whether you seek clarity on a question or a holistic understanding of your life’s purpose, <span className="font-brand text-xl tracking-wide">Aatmaya</span> is here to illuminate the unseen and empower your spirit.
                         </p>
                         <p className="font-heading text-2xl text-antique-white mt-12 text-center italic py-8 border-t border-b border-mystic-gold/20 tracking-wider bg-mystic-gold/5">
                             Step beyond the ordinary—embrace the infinite possibilities that await.

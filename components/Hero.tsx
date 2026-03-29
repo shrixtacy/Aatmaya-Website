@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -54,16 +55,16 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 2 }}
           className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-8 mb-20 md:mb-0"
         >
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group relative px-6 md:px-8 py-3 md:py-4 bg-mystic-gold/10 border border-mystic-gold/40 text-mystic-gold font-heading tracking-[0.2em] uppercase text-xs md:text-sm overflow-hidden hover:text-void transition-colors duration-500 outline-none inline-block">
+          <a href="https://wa.me/918117005888?text=Hi%20Aatmaya%2C%20I%20would%20like%20to%20ask%20about%20your%20services%20and%20get%20more%20information." target="_blank" rel="noopener noreferrer" className="group relative px-6 md:px-8 py-3 md:py-4 bg-mystic-gold/10 border border-mystic-gold/40 text-mystic-gold font-heading tracking-[0.2em] uppercase text-xs md:text-sm overflow-hidden hover:text-void transition-colors duration-500 outline-none inline-block">
             <div className="absolute inset-0 w-full h-full bg-mystic-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
             <span className="relative z-10 flex items-center justify-center gap-2">
               <Star className="w-4 h-4" /> Book a Reading
             </span>
           </a>
 
-          <button className="group px-6 md:px-8 py-3 md:py-4 text-parchment font-heading tracking-[0.2em] uppercase text-xs md:text-sm hover:text-mystic-gold transition-colors duration-300 border-b border-transparent hover:border-mystic-gold/50">
+          <Link to="/services" className="group px-6 md:px-8 py-3 md:py-4 text-parchment font-heading tracking-[0.2em] uppercase text-xs md:text-sm hover:text-mystic-gold transition-colors duration-300 border-b border-transparent hover:border-mystic-gold/50">
             Explore Services
-          </button>
+          </Link>
         </motion.div>
       </div>
 

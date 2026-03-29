@@ -13,6 +13,7 @@ import StarBackground from './components/StarBackground';
 import JournalPage from './components/JournalPage';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
+import ContactPage from './components/ContactPage';
 
 const HomePage: React.FC = () => (
   <>
@@ -38,6 +39,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/journal" element={<JournalPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
     </Router>

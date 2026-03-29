@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Journal', href: '/journal' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -32,8 +32,11 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           {/* Brand */}
-          <Link to="/" className="font-heading text-xl md:text-2xl text-antique-white tracking-widest font-bold hover:text-mystic-gold transition-colors z-50 relative">
-            Aatmaya
+          <Link to="/" className="flex items-center gap-3 z-50 relative group">
+            <img src="/logo.png" alt="Aatmaya Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-105 transition-transform" />
+            <span className="font-brand text-xl md:text-2xl text-antique-white tracking-widest font-bold group-hover:text-mystic-gold transition-colors pt-1">
+              Aatmaya
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -48,9 +51,9 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <button className="px-6 py-2 border border-mystic-gold/40 text-mystic-gold font-heading text-xs uppercase tracking-[0.2em] hover:bg-mystic-gold hover:text-void transition-all duration-300">
+            <a href="https://wa.me/918117005888?text=Hi%20Aatmaya%2C%20I%20would%20like%20to%20ask%20about%20your%20services%20and%20get%20more%20information." target="_blank" rel="noopener noreferrer" className="px-6 py-2 border border-mystic-gold/40 text-mystic-gold font-heading text-xs uppercase tracking-[0.2em] hover:bg-mystic-gold hover:text-void transition-all duration-300">
               Book Reading
-            </button>
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -76,9 +79,9 @@ const Navbar: React.FC = () => {
             {link.name}
           </Link>
         ))}
-        <button className="mt-4 px-8 py-3 border border-mystic-gold text-mystic-gold font-heading text-sm uppercase tracking-widest hover:bg-mystic-gold hover:text-void transition-all relative z-10">
+        <a href="https://wa.me/918117005888?text=Hi%20Aatmaya%2C%20I%20would%20like%20to%20ask%20about%20your%20services%20and%20get%20more%20information." target="_blank" rel="noopener noreferrer" className="mt-4 px-8 py-3 border border-mystic-gold text-mystic-gold font-heading text-sm uppercase tracking-widest hover:bg-mystic-gold hover:text-void transition-all relative z-10">
           Book Reading
-        </button>
+        </a>
       </div>
     </>
   );

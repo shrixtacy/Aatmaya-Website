@@ -88,7 +88,7 @@ const TarotSection: React.FC = () => {
                                     <img
                                         src="/Tarot.webp"
                                         alt="Tarot Scene"
-                                        className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-1000"
+                                        className="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-1000"
                                     />
                                     <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-void to-transparent">
                                         <span className="font-heading text-xs tracking-widest text-mystic-gold uppercase">Material</span>
