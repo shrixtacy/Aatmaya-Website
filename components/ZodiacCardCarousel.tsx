@@ -82,8 +82,8 @@ const ZodiacCardCarousel: React.FC = () => {
   };
 
   // Card width/height
-  const cw = isMobile ? 140 : 260;
-  const ch = isMobile ? 210 : 400;
+  const cw = isMobile ? 170 : 260;
+  const ch = isMobile ? 255 : 400;
 
   const getStyle = (index: number) => {
     let diff = index - active;
@@ -91,12 +91,13 @@ const ZodiacCardCarousel: React.FC = () => {
     if (diff < -TOTAL / 2) diff += TOTAL;
     const abs = Math.abs(diff);
 
-    // Only render 5 cards: -2, -1, 0, 1, 2
-    if (abs > 2) {
+    // For mobile only show 3 cards (abs > 1), desktop 5 cards (abs > 2)
+    const maxVisible = isMobile ? 1 : 2;
+    if (abs > maxVisible) {
       return { opacity: 0, pointerEvents: 'none' as const, zIndex: 0, transform: 'scale(0)' };
     }
 
-    const spreadX = isMobile ? 80 : 220;
+    const spreadX = isMobile ? 100 : 220;
     const tx = diff * spreadX;
     const ty = abs * abs * (isMobile ? 12 : 20); // arc
     const rot = diff * (isMobile ? 10 : 7);
@@ -112,7 +113,7 @@ const ZodiacCardCarousel: React.FC = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-void overflow-hidden">
+    <section className="relative py-10 md:py-24 bg-void overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-mystic-gold/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
@@ -130,7 +131,7 @@ const ZodiacCardCarousel: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           viewport={{ once: true }}
-          className="font-body text-lg md:text-xl text-parchment/60 mb-14 max-w-2xl mx-auto"
+          className="font-body text-lg md:text-xl text-parchment/60 mb-6 md:mb-14 max-w-2xl mx-auto px-4"
         >
           Explore the mystical world of tarot with weekly zodiac readings for every sign.
         </motion.p>

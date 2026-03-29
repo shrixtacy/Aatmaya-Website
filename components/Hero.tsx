@@ -4,8 +4,17 @@ import { Star, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-void">
+    <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden px-6 text-center bg-void">
 
       {/* Background with Slow Zoom Effect */}
       <motion.div
@@ -19,9 +28,9 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-void/30 via-transparent to-void"></div>
       <div className="absolute inset-0 z-[1] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 animate-pulse"></div>
 
-      <div className="relative z-10 max-w-5xl flex flex-col items-center gap-10">
+      <div className="relative z-10 max-w-5xl flex flex-col items-center gap-6 md:gap-10 pb-24 md:pb-0 pt-16 md:pt-0">
 
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-antique-white to-parchment-dark drop-shadow-2xl">
+        <h1 className="font-heading text-3xl md:text-6xl lg:text-7xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-antique-white to-parchment-dark drop-shadow-2xl">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +53,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="font-body text-lg md:text-xl text-parchment/80 tracking-wide max-w-3xl leading-relaxed mx-auto"
+          className="font-body text-base md:text-xl text-parchment/80 tracking-wide max-w-3xl leading-relaxed mx-auto px-2 md:px-0"
         >
           If you are feeling uncertain, curious, or simply seeking a deeper connection with your life path, know that the universe has a message for you. Let’s uncover it together.
         </motion.p>
@@ -53,7 +62,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
-          className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-8 mb-20 md:mb-0"
+          className="flex flex-col md:flex-row gap-4 md:gap-6 mt-2 md:mt-8 mb-4 md:mb-0"
         >
           <a href="https://wa.me/918117005888?text=Hi%20Aatmaya%2C%20I%20would%20like%20to%20ask%20about%20your%20services%20and%20get%20more%20information." target="_blank" rel="noopener noreferrer" className="group relative px-6 md:px-8 py-3 md:py-4 bg-mystic-gold/10 border border-mystic-gold/40 text-mystic-gold font-heading tracking-[0.2em] uppercase text-xs md:text-sm overflow-hidden hover:text-void transition-colors duration-500 outline-none inline-block">
             <div className="absolute inset-0 w-full h-full bg-mystic-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
@@ -105,14 +114,22 @@ const Hero: React.FC = () => {
                 rotateX: 0,
                 rotate: card.rotate
               }}
-              transition={{
-                duration: 0.8,
-                delay: card.delay,
-                type: "spring",
-                stiffness: 80,
-                damping: 12
-              }}
-              className="absolute bottom-0 left-0 w-48 md:w-64 lg:w-80 h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)] border border-mystic-gold/10 rounded-lg perspective-1000"
+              transition={
+                isMobile
+                  ? {
+                      duration: 1.2,
+                      delay: card.delay,
+                      ease: [0.25, 1, 0.5, 1] // Custom smooth cinematic easeOut
+                    }
+                  : {
+                      duration: 0.8,
+                      delay: card.delay,
+                      type: "spring",
+                      stiffness: 80,
+                      damping: 12
+                    }
+              }
+              className="absolute bottom-0 left-0 w-36 md:w-64 lg:w-80 h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)] border border-mystic-gold/10 rounded-lg perspective-1000"
               alt={`Tarot Card ${i + 1}`}
             />
           ))}
@@ -143,14 +160,22 @@ const Hero: React.FC = () => {
                 rotateX: 0,
                 rotate: card.rotate
               }}
-              transition={{
-                duration: 0.8,
-                delay: card.delay,
-                type: "spring",
-                stiffness: 80,
-                damping: 12
-              }}
-              className="absolute bottom-0 right-0 w-48 md:w-64 lg:w-80 h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)] border border-mystic-gold/10 rounded-lg perspective-1000"
+              transition={
+                isMobile
+                  ? {
+                      duration: 1.2,
+                      delay: card.delay,
+                      ease: [0.25, 1, 0.5, 1] // Custom smooth cinematic easeOut
+                    }
+                  : {
+                      duration: 0.8,
+                      delay: card.delay,
+                      type: "spring",
+                      stiffness: 80,
+                      damping: 12
+                    }
+              }
+              className="absolute bottom-0 right-0 w-36 md:w-64 lg:w-80 h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)] border border-mystic-gold/10 rounded-lg perspective-1000"
               alt={`Tarot Card ${i + 4}`}
             />
           ))}
