@@ -20,7 +20,7 @@ const services = [
     id: 'palmistry',
     title: 'Palmistry',
     description: 'Decode the map hidden in your hands. A comprehensive analysis of your lifelines to understand your dominant traits, career path, love life, and physical vitality.',
-    imageUrl: '/AboutSpace2.jpeg',
+    imageUrl: '/palmistry.jpeg',
   },
   {
     id: 'reiki',
@@ -71,7 +71,7 @@ const StickyServices: React.FC = () => {
                 <img
                   src={service.imageUrl}
                   alt={service.title}
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:-0 transition-all duration-1000 ease-out"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2994&auto=format&fit=crop';
                   }}
@@ -93,7 +93,7 @@ const StickyServices: React.FC = () => {
                 </p>
 
                 <div className="flex flex-row gap-3 relative z-10">
-                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="group flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-mystic-gold/10 hover:bg-mystic-gold/20 border border-mystic-gold/40 text-mystic-gold uppercase tracking-[0.1em] text-[10px] md:text-xs transition-all duration-300 whitespace-nowrap">
+                  <a href={`https://wa.me/918117005888?text=${encodeURIComponent(`Hi Aatmaya, I'm interested in booking a ${service.title} reading and would like more information.`)}`} target="_blank" rel="noopener noreferrer" className="group flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-mystic-gold/10 hover:bg-mystic-gold/20 border border-mystic-gold/40 text-mystic-gold uppercase tracking-[0.1em] text-[10px] md:text-xs transition-all duration-300 whitespace-nowrap">
                     <Calendar className="w-4 h-4" />
                     <span>Book Appointment</span>
                   </a>

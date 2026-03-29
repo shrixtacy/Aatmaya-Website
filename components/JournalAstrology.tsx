@@ -17,7 +17,7 @@ const AstrologySection: React.FC = () => {
                         <img
                             src="/Astrology.webp"
                             alt="Vedic Astrology Chart"
-                            className="w-full h-full object-cover grayscale contrast-125 opacity-80"
+                            className="w-full h-full object-cover opacity-80"
                         />
                     </div>
                 </motion.div>

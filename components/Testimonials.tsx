@@ -12,7 +12,7 @@ const Testimonials: React.FC = () => {
                 <div className="text-center mb-20">
                     <Star className="w-6 h-6 text-mystic-gold mx-auto mb-6 animate-pulse" />
                     <h2 className="font-heading text-4xl md:text-5xl text-antique-white tracking-wide">
-                        Echoes of <span className="text-mystic-gold">Transformation</span>
+                        <span className="text-mystic-gold">Testimonials</span>
                     </h2>
                 </div>
 

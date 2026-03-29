@@ -23,7 +23,7 @@ const BlogSection: React.FC = () => {
                     <img 
                         src="https://images.unsplash.com/photo-1528818955841-a7f1d0c450ea?q=80&w=1000&auto=format&fit=crop" 
                         alt="Full Moon" 
-                        className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105 grayscale sepia-[.3]"
+                        className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105 sepia-[.3]"
                     />
                 </div>
                 <div className="flex flex-col items-start">
@@ -42,7 +42,7 @@ const BlogSection: React.FC = () => {
                     <img 
                         src="https://images.unsplash.com/photo-1600609842388-3e449195b058?q=80&w=1000&auto=format&fit=crop" 
                         alt="Crystals" 
-                        className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105 grayscale sepia-[.3]"
+                        className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105 sepia-[.3]"
                     />
                 </div>
                 <div className="flex flex-col items-start">

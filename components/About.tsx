@@ -23,7 +23,7 @@ const About: React.FC = () => {
                     <img 
                         src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21?q=80&w=1000&auto=format&fit=crop" 
                         alt="Tarot Reader Portrait" 
-                        className="w-full h-full object-cover grayscale contrast-125 sepia-[.2] opacity-90"
+                        className="w-full h-full object-cover sepia-[.2] opacity-90"
                     />
                 </div>
              </div>

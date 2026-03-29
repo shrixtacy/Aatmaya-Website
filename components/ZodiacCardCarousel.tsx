@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 
 const zodiacSigns = [
   { name: 'Weekly Tarot', symbol: '✦', isImage: true, image: '/Weekly Zodiac Tarot 1.jpg' },
-  { name: 'Aries', symbol: '♈' },
-  { name: 'Taurus', symbol: '♉' },
-  { name: 'Gemini', symbol: '♊' },
-  { name: 'Cancer', symbol: '♋' },
-  { name: 'Leo', symbol: '♌' },
-  { name: 'Virgo', symbol: '♍' },
-  { name: 'Libra', symbol: '♎' },
-  { name: 'Scorpio', symbol: '♏' },
-  { name: 'Sagittarius', symbol: '♐' },
-  { name: 'Capricorn', symbol: '♑' },
-  { name: 'Aquarius', symbol: '♒' },
-  { name: 'Pisces', symbol: '♓' },
+  { name: 'Aries', symbol: '♈', cardName: 'The Chariot', description: 'Use willpower and discipline to commit to one clear plan.' },
+  { name: 'Taurus', symbol: '♉', cardName: 'Justice', description: 'Focus on fairness, accountability, and restoring balance in your life.' },
+  { name: 'Gemini', symbol: '♊', cardName: '7 of Pentacles', description: 'Practice patience; your steady work is beginning to show long-term growth.' },
+  { name: 'Cancer', symbol: '♋', cardName: '4 of Cups', description: 'Avoid emotional fatigue by reconnecting with gratitude and new opportunities.' },
+  { name: 'Leo', symbol: '♌', cardName: '3 of Swords', description: 'A healing period; focus on emotional honesty and releasing what no longer serves you.' },
+  { name: 'Virgo', symbol: '♍', cardName: 'Knight of Pentacles', description: 'Move steadily toward success; consistency is more important than speed right now.' },
+  { name: 'Libra', symbol: '♎', cardName: 'The Sun', description: 'Step into brightness and joy; your natural charm attracts good fortune.' },
+  { name: 'Scorpio', symbol: '♏', cardName: 'King of Wands', description: 'Step into your power and lead with charisma and focused ambition.' },
+  { name: 'Sagittarius', symbol: '♐', cardName: 'The Chariot', description: 'Your momentum is back; focus on decisive movement and travel.' },
+  { name: 'Capricorn', symbol: '♑', cardName: 'Page of Pentacles', description: 'Ground yourself in practical steps and focus on long-term stability.' },
+  { name: 'Aquarius', symbol: '♒', cardName: 'The Star', description: 'Embrace renewed hope and inspiration; your innovative ideas will guide you forward.' },
+  { name: 'Pisces', symbol: '♓', cardName: 'The Moon', description: 'Trust your deep intuition and navigate through illusions to find clarity.' },
 ];
 
 const TOTAL = zodiacSigns.length;
@@ -187,24 +187,46 @@ const ZodiacCardCarousel: React.FC = () => {
                     {/* Dotted border inset */}
                     <div className="absolute inset-3 border border-dashed border-mystic-gold/15 rounded-lg pointer-events-none" />
 
-                    {/* Top decorative element */}
-                    <div className="text-mystic-gold/30 text-xs mb-2">✦ ☽ ✦</div>
-
-                    {/* Zodiac Symbol */}
-                    <span className={`text-mystic-gold drop-shadow-[0_0_15px_rgba(212,175,55,0.4)] ${isMobile ? 'text-4xl mb-2' : 'text-6xl mb-3'}`}>
-                      {card.symbol}
-                    </span>
-
-                    {/* Name */}
-                    <span className={`font-heading text-antique-white tracking-[0.15em] uppercase ${isMobile ? 'text-[10px]' : 'text-xs'}`}>
-                      {card.name}
-                    </span>
-
-                    {/* Bottom decorative element */}
-                    <div className="text-mystic-gold/30 text-xs mt-2">✦ ☽ ✦</div>
-
-                    {/* Subtle radial glow behind symbol */}
+                    {/* Subtle radial glow behind symbol background */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(212,175,55,0.06)_0%,transparent_60%)] pointer-events-none" />
+
+                    {/* Inner content overlay */}
+                    <div className="absolute inset-0 flex flex-col items-center px-4 py-5 z-10 w-full">
+                      {/* Name & Symbol */}
+                      <div className="text-center w-full mb-3">
+                        <span className={`font-heading text-antique-white tracking-[0.1em] uppercase ${isMobile ? 'text-[10px]' : 'text-[11px]'} flex items-center justify-center gap-1.5`}>
+                          <span className="text-mystic-gold/60">✦</span>
+                          {(card as any).name} {(card as any).symbol}
+                          <span className="text-mystic-gold/60">✦</span>
+                        </span>
+                      </div>
+
+                      {/* Tarot "Photo" Area */}
+                      <div className={`w-full ${isMobile ? 'h-20' : 'h-36'} border border-mystic-gold/30 bg-black/60 rounded-md flex flex-col items-center justify-center relative overflow-hidden mb-3 md:mb-4 shadow-inner`}>
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.15)_0%,transparent_70%)] pointer-events-none" />
+                        <span className={`text-mystic-gold font-heading text-center uppercase tracking-widest ${isMobile ? 'text-xs px-2' : 'text-lg px-4'} drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] z-10 leading-snug`}>
+                          {(card as any).cardName || 'Tarot Card'}
+                        </span>
+                        {/* Little decorative star inside the photo box */}
+                        <div className="absolute bottom-2 text-mystic-gold/20 text-[10px]">✧</div>
+                      </div>
+
+                      {/* Text Description */}
+                      <div className="flex-1 flex w-full items-start justify-center">
+                        {(card as any).description ? (
+                          <p className={`font-body text-parchment/90 text-center ${isMobile ? 'text-[9px] leading-[1.3]' : 'text-[13px] leading-relaxed'} line-clamp-4`}>
+                            {(card as any).description}
+                          </p>
+                        ) : (
+                          <p className={`font-body text-mystic-gold/50 text-center ${isMobile ? 'text-[9px]' : 'text-xs'} italic`}>
+                            Awaiting reading...
+                          </p>
+                        )}
+                      </div>
+                      
+                      {/* Bottom decor */}
+                      <div className="text-mystic-gold/30 text-[10px] md:text-xs mt-auto">☽ ✧ ☾</div>
+                    </div>
                   </div>
                 )}
               </div>

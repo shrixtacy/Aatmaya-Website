@@ -78,9 +78,9 @@ const IntroDoubleSlide: React.FC = () => {
                                             <div className="absolute inset-0 border border-parchment/10 -rotate-3 -translate-x-2 -translate-y-2 transition-transform duration-700 group-hover:-rotate-1"></div>
                                             <div className="absolute inset-0 overflow-hidden">
                                                 <img
-                                                    src="/suravi-mishra.webp"
+                                                    src="/about-reader.jpeg"
                                                     alt="Suravi Mishra Portrait"
-                                                    className="w-full h-full object-cover grayscale contrast-110 opacity-90"
+                                                    className="w-full h-full object-cover opacity-90"
                                                 />
                                             </div>
                                         </div>
@@ -102,7 +102,7 @@ const IntroDoubleSlide: React.FC = () => {
                                                 My path began with Tarot, which opened the door to self-discovery. Hungry for deeper truths, I expanded my studies into Vedic Astrology and Palmistry, gaining formal wisdom under the guidance of Gurudev Shrie Kashyap. What started as a personal quest to heal my own life soon transformed into a calling to help family and friends.
                                             </p>
                                             <p>
-                                                Today, that passion has evolved into my profession. Having served over 100+ clients, I now use the knowledge that changed my life to help you change yours. At Aatmaya, I am not just reading your chart; I am helping you find the clarity I once sought—and found.
+                                                Today, that passion has evolved into my profession. Having served over 100+ clients, I now use the knowledge that changed my life to help you change yours. At <span className="font-brand tracking-normal">Aatmaya</span>, I am not just reading your chart; I am helping you find the clarity I once sought—and found.
                                             </p>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@ const IntroDoubleSlide: React.FC = () => {
                                                 <img
                                                     src="/AboutSpace2.jpeg"
                                                     alt="Aatmaya Mystic Arts"
-                                                    className="w-full h-full object-cover grayscale contrast-125 sepia-[.2] opacity-90"
+                                                    className="w-full h-full object-cover sepia-[.2] opacity-90"
                                                 />
                                             </div>
                                         </div>
@@ -140,10 +140,10 @@ const IntroDoubleSlide: React.FC = () => {
                                                 Your birth chart is your blueprint, and your palms are your timeline. Through a unique blend of Vedic Astrology, Palmistry, and Tarot, we turn the unknown into actionable insight.
                                             </p>
                                             <p>
-                                                Aatmaya is a sanctuary for the mystic arts with a reputation for accuracy and empathy. Mastering the trifecta of Vedic Astrology, Palmistry, and Tarot, we look past the surface to reveal the core of your challenges.
+                                                <span className="font-brand tracking-normal">Aatmaya</span> is a sanctuary for the mystic arts with a reputation for accuracy and empathy. Mastering the trifecta of Vedic Astrology, Palmistry, and Tarot, we look past the surface to reveal the core of your challenges.
                                             </p>
                                             <p>
-                                                At Aatmaya, we provide honest, direct, and transformative guidance to help you take control of your destiny today.
+                                                At <span className="font-brand tracking-normal">Aatmaya</span>, we provide honest, direct, and transformative guidance to help you take control of your destiny today.
                                             </p>
                                             <p>
                                                 Your journey doesn't end here, and neither does the guidance. The universe has more to reveal—visit us again whenever you are ready to listen. Thank you.

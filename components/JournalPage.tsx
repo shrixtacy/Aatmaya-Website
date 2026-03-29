@@ -25,7 +25,7 @@ const JournalPage: React.FC = () => {
             {/* Hero Section */}
             <header className="relative h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2940&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale transform-gpu"></div>
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2940&auto=format&fit=crop')] bg-cover bg-center opacity-40 transform-gpu"></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void"></div>
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
                 </div>
