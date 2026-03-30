@@ -67,6 +67,8 @@ const Testimonials: React.FC = () => {
                     }}
                     onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
                     onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+                    onTouchStart={e => (e.currentTarget.style.animationPlayState = 'paused')}
+                    onTouchEnd={e => (e.currentTarget.style.animationPlayState = 'running')}
                 >
                     {[...testimonialsData, ...testimonialsData].map((t, i) => (
                         <div
