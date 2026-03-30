@@ -7,6 +7,7 @@ import StickyServices from './components/StickyServices';
 import ZodiacCardCarousel from './components/ZodiacCardCarousel';
 import AstralCalendar from './components/AstralCalendar';
 import Testimonials from './components/Testimonials';
+import FeedbackBanner from './components/FeedbackBanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StarBackground from './components/StarBackground';
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => (
     <ZodiacCardCarousel />
     <AstralCalendar />
     <Testimonials />
+    <FeedbackBanner />
     <Contact />
     <Footer />
   </>
