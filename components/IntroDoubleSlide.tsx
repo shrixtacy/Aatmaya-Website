@@ -119,7 +119,7 @@ const IntroDoubleSlide: React.FC = () => {
                                             <div className="absolute inset-0 border border-parchment/10 rotate-3 -translate-x-2 -translate-y-2 transition-transform duration-700 group-hover:rotate-1"></div>
                                             <div className="absolute inset-0 overflow-hidden">
                                                 <img
-                                                    src="/AboutSpace2.jpeg"
+                                                    src="/AboutVision.jpeg"
                                                     alt="Aatmaya Mystic Arts"
                                                     className="w-full h-full object-cover sepia-[.2] opacity-90"
                                                 />
