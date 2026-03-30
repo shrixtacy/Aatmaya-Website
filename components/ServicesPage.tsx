@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { Sparkles, Calendar } from 'lucide-react';
+import { Sparkles, Calendar, ChevronDown } from 'lucide-react';
 
 interface SubService {
     title: string;
@@ -243,9 +243,15 @@ const ServicesPage: React.FC = () => {
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
+    const [openId, setOpenId] = useState<string | null>(null);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const toggle = (id: string) => {
+        setOpenId(prev => (prev === id ? null : id));
+    };
 
     return (
         <div className="bg-void min-h-screen text-antique-white selection:bg-mystic-gold selection:text-void">
@@ -260,10 +266,7 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
-                    <motion.div
-                        style={{ y: y1, opacity }}
-                        className="space-y-6 will-change-transform"
-                    >
+                    <motion.div style={{ y: y1, opacity }} className="space-y-6 will-change-transform">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -296,72 +299,104 @@ const ServicesPage: React.FC = () => {
                 </div>
             </header>
 
-            {/* Main Content */}
-            <main className="max-w-6xl mx-auto px-6 pb-32 space-y-32 mt-12">
-                {serviceCategories.map((category, catIndex) => (
-                    <motion.section
-                        key={category.id}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-80px" }}
-                        variants={fadeUpVariants}
-                    >
-                        {/* Category Header */}
-                        <div className="flex items-center gap-6 mb-16">
-                            <div className="text-mystic-gold/10 font-heading text-7xl md:text-9xl font-bold leading-none select-none">
-                                0{catIndex + 1}
-                            </div>
-                            <div>
-                                <h2 className="font-heading text-4xl md:text-5xl text-antique-white tracking-wider">
-                                    {category.name}
-                                </h2>
-                                <div className="w-20 h-[2px] bg-mystic-gold mt-4"></div>
-                            </div>
-                        </div>
+            {/* Accordion Services */}
+            <main className="max-w-5xl mx-auto px-6 pb-32 mt-16 space-y-4">
+                {serviceCategories.map((category, catIndex) => {
+                    const isOpen = openId === category.id;
+                    return (
+                        <motion.div
+                            key={category.id}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-60px" }}
+                            variants={fadeUpVariants}
+                        >
+                            {/* Accordion Header */}
+                            <button
+                                onClick={() => toggle(category.id)}
+                                className="w-full flex items-center justify-between gap-6 px-8 py-6 border border-mystic-gold/20 hover:border-mystic-gold/50 transition-all duration-400 group text-left"
+                                style={{
+                                    background: isOpen
+                                        ? 'rgba(212,175,55,0.06)'
+                                        : 'rgba(255,255,255,0.02)',
+                                }}
+                            >
+                                <div className="flex items-center gap-6">
+                                    <span className="font-heading text-4xl md:text-5xl text-mystic-gold/10 group-hover:text-mystic-gold/20 transition-colors font-bold select-none leading-none">
+                                        0{catIndex + 1}
+                                    </span>
+                                    <h2 className="font-heading text-2xl md:text-3xl text-antique-white tracking-wider group-hover:text-mystic-gold transition-colors duration-300">
+                                        {category.name}
+                                    </h2>
+                                </div>
 
-                        {/* Sub-services Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {category.subServices.map((sub, subIndex) => (
-                                <motion.div
-                                    key={subIndex}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: subIndex * 0.08 }}
-                                    className="group relative bg-void-light/30 border border-mystic-gold/10 hover:border-mystic-gold/30 p-8 transition-all duration-500 rounded-sm overflow-hidden"
-                                >
-                                    {/* Hover glow */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-mystic-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    
-                                    <div className="relative z-10">
-                                        <h3 className="font-heading text-xl md:text-2xl text-mystic-gold mb-4 tracking-wider">
-                                            {sub.title}
-                                        </h3>
-                                        <p className="font-body text-parchment/80 text-base leading-relaxed mb-3">
-                                            {sub.description}
-                                        </p>
-                                        <p className="font-body text-parchment/60 text-sm leading-relaxed">
-                                            {sub.detail}
-                                        </p>
-                                    </div>
+                                <div className="flex items-center gap-3 shrink-0">
+                                    <span className="font-body text-xs text-parchment/40 uppercase tracking-widest hidden sm:block">
+                                        {category.subServices.length} services
+                                    </span>
+                                    <motion.div
+                                        animate={{ rotate: isOpen ? 180 : 0 }}
+                                        transition={{ duration: 0.35, ease: 'easeInOut' }}
+                                        className="w-8 h-8 rounded-full border border-mystic-gold/25 flex items-center justify-center text-mystic-gold/60 group-hover:border-mystic-gold/60 group-hover:text-mystic-gold transition-all"
+                                    >
+                                        <ChevronDown className="w-4 h-4" />
+                                    </motion.div>
+                                </div>
+                            </button>
 
-                                    {/* Book Button */}
-                                    <div className="relative z-10 mt-6">
-                                        <a
-                                            href={`https://wa.me/918117005888?text=${encodeURIComponent(`Hi Aatmaya, I'm interested in booking a ${sub.title} reading and would like more information.`)}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-mystic-gold/70 hover:text-mystic-gold text-xs uppercase tracking-widest transition-colors font-heading"
-                                        >
-                                            <Calendar className="w-3.5 h-3.5" />
-                                            Book This Reading
-                                        </a>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.section>
-                ))}
+                            {/* Accordion Body */}
+                            <AnimatePresence initial={false}>
+                                {isOpen && (
+                                    <motion.div
+                                        key="content"
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: 'auto', opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.45, ease: 'easeInOut' }}
+                                        className="overflow-hidden border-x border-b border-mystic-gold/15"
+                                        style={{ background: 'rgba(255,255,255,0.015)' }}
+                                    >
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-px p-px bg-mystic-gold/10">
+                                            {category.subServices.map((sub, subIndex) => (
+                                                <motion.div
+                                                    key={subIndex}
+                                                    initial={{ opacity: 0, y: 12 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    transition={{ duration: 0.35, delay: subIndex * 0.06 }}
+                                                    className="group relative bg-void p-7 hover:bg-void-light/30 transition-all duration-400 overflow-hidden"
+                                                >
+                                                    {/* hover glow */}
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-mystic-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                                    <div className="relative z-10">
+                                                        <h3 className="font-heading text-lg md:text-xl text-mystic-gold mb-3 tracking-wider">
+                                                            {sub.title}
+                                                        </h3>
+                                                        <p className="font-body text-parchment/75 text-sm leading-relaxed mb-2">
+                                                            {sub.description}
+                                                        </p>
+                                                        <p className="font-body text-parchment/50 text-xs leading-relaxed mb-5">
+                                                            {sub.detail}
+                                                        </p>
+                                                        <a
+                                                            href={`https://wa.me/918117005888?text=${encodeURIComponent(`Hi Aatmaya, I'm interested in booking a ${sub.title} reading and would like more information.`)}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-2 text-mystic-gold/60 hover:text-mystic-gold text-[11px] uppercase tracking-widest transition-colors font-heading"
+                                                        >
+                                                            <Calendar className="w-3 h-3" />
+                                                            Book This Reading
+                                                        </a>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
+                    );
+                })}
             </main>
 
             <Footer />
@@ -370,3 +405,4 @@ const ServicesPage: React.FC = () => {
 };
 
 export default ServicesPage;
+
